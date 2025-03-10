@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8090:8080"
+    expose:
+      - "8090"
+    networks:
+      - app-network
+  frontend:
+    build: ./frontend
+    ports:
+      - "8091:80"
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+networks:
+  app-network:
+    driver: bridge

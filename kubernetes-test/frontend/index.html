@@ -1,0 +1,18 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Olá!</h1>
+    <button onclick="consume()">Clique para chamar o back-end</button>
+    <p>Texto: <span id="response-text"></span></p>
+    <script>
+        async function consume() {
+            let response = await fetch('http://localhost:8090/');
+            let text = await response.text();
+            let spanElement = document.querySelector('#response-text');
+            spanElement.innerText = text;
+        }
+    </script>
+</body>
+</html>
