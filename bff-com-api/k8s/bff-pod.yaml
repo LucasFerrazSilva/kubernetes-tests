@@ -12,4 +12,7 @@ spec:
         - containerPort: 8080
       env:
         - name: API_URL
-          value: "http://svc-api-clusterip"
+          valueFrom:
+            configMapKeyRef:
+              name: bff-config
+              key: API_URL
