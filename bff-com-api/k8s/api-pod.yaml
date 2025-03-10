@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubernetes-api-para-bff
+  labels:
+    app: kubernetes-api-para-bff
+spec:
+  containers:
+    - name: api-para-bff
+      image: lucasferraz95/kubernetes-api-do-bff:1.0
+      ports:
+        - containerPort: 8081

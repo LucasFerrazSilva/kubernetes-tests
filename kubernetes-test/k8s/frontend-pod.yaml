@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubernetes-test-frontend
+  labels:
+    app: kubernetes-test-frontend
+spec:
+  containers:
+    - name: pod-frontend1
+      image: lucasferraz95/kubernetes-test-frontend:latest
