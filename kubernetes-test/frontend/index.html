@@ -8,7 +8,7 @@
     <p>Texto: <span id="response-text"></span></p>
     <script>
         async function consume() {
-            let response = await fetch('http://localhost:8090/');
+            let response = await fetch('http://localhost:31303/');
             let text = await response.text();
             let spanElement = document.querySelector('#response-text');
             spanElement.innerText = text;
