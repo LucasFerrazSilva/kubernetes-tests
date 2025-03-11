@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-probes
+  labels:
+    app: app-probes
+spec:
+  containers:
+    - name: app-probes-c
+      image: lucasferraz95/kubernetes-probes:1.0
+      ports:
+        - containerPort: 8080
+      livenessProbe:
+        httpGet:
+          path: /actuator/health/liveness
+          port: 8080
+        initialDelaySeconds: 5
+        periodSeconds: 10
+      readinessProbe:
+        httpGet:
+          path: /actuator/health/readiness
+          port: 8080
+        initialDelaySeconds: 10
+        periodSeconds: 15
+      startupProbe:
+        httpGet:
+          path: /startup
+          port: 8080
+        initialDelaySeconds: 15
+        periodSeconds: 10
