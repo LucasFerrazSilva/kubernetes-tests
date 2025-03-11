@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: deployment-e-replicasets-pod
+  labels:
+    app: deployment-e-replicasets-pod
+spec:
+  containers:
+    - name: deployment-e-replicasets-container
+      image: lucasferraz95/kubernetes-deployment-e-replicasets:1.0
+      ports:
+        - containerPort: 8080

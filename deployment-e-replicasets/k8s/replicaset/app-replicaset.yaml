@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: app-replicaset
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deployment-e-replicasets-rs
+  template:
+    metadata:
+      labels:
+        app: deployment-e-replicasets-rs
+    spec:
+      containers:
+        - name: deployment-e-replicasets-container
+          image: lucasferraz95/kubernetes-deployment-e-replicasets:1.0
+          ports:
+            - containerPort: 8080

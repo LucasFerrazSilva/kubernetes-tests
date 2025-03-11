@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f79a3348-0e28-4f8b-96c0-5e3cbcabfdd8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/kubernetes-test/k8s/frontend-svc.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kubernetes-test/k8s/backend-svc.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes-test/k8s/backend-svc.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +40,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/lucas/Documents/Estudos/kubernetes-tests/kubernetes-test/k8s"
+    "last_opened_file_path": "C:/Users/lucas/Documents/Estudos/kubernetes-tests/deployment-e-replicasets"
   }
 }]]></component>
   <component name="RecentsManager">
