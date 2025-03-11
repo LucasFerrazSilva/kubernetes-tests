@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: app-deployment-container
-          image: lucasferraz95/kubernetes-deployment-e-replicasets:1.0
+          image: lucasferraz95/kubernetes-deployment-e-replicasets:3.0
           ports:
             - containerPort: 8080

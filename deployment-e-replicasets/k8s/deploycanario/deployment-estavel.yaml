@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-estavel
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-deployment-canario
+      version: estavel
+  template:
+    metadata:
+      labels:
+        app: app-deployment-canario
+        version: estavel
+    spec:
+      containers:
+        - name: app-deployment-canario-container
+          image: lucasferraz95/kubernetes-deployment-e-replicasets:2.0
+          ports:
+            - containerPort: 8080

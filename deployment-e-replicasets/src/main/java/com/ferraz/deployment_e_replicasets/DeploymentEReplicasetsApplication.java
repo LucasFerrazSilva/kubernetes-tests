@@ -12,7 +12,7 @@ public class DeploymentEReplicasetsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DeploymentEReplicasetsApplication.class, args);
-		RANDOM_NUMBER = new Random().nextInt(100000000);
+		RANDOM_NUMBER = -1;
 	}
 
 }

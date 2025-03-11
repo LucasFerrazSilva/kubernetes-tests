@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-canario
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-deployment-canario
+      version: canario
+  template:
+    metadata:
+      labels:
+        app: app-deployment-canario
+        version: canario
+    spec:
+      containers:
+        - name: app-deployment-canario-container
+          image: lucasferraz95/kubernetes-deployment-e-replicasets:4.0
+          ports:
+            - containerPort: 8080
