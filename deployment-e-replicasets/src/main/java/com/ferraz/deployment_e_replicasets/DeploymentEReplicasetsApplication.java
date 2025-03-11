@@ -12,7 +12,8 @@ public class DeploymentEReplicasetsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DeploymentEReplicasetsApplication.class, args);
-		RANDOM_NUMBER = -1;
+//		RANDOM_NUMBER = new Random().nextInt(100); // versao "normal"
+		RANDOM_NUMBER = -1; // versao "canario"
 	}
 
 }
