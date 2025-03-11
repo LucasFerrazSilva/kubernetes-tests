@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-volume
+  labels:
+    app: app-volume
+spec:
+  containers:
+    - name: app-volume-c1
+      image: lucasferraz95/kubernetes-volumes:1.0
+      ports:
+        - containerPort: 8080
+      volumeMounts:
+        - mountPath: /file
+          name: file-volume-hostname
+    - name: app-volume-c2
+      image: lucasferraz95/kubernetes-volumes:1.0
+      ports:
+        - containerPort: 8081
+      env:
+        - name: SERVER_PORT
+          value: "8081"
+      volumeMounts:
+        - mountPath: /file
+          name: file-volume-hostname
+  volumes:
+    - name: file-volume-hostname
+      hostPath:
+        path: /mnt/c/file
