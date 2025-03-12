@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-hpa-deployment
+  labels:
+    app: app-hpa-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-hpa-deployment
+  template:
+    metadata:
+      labels:
+        app: app-hpa-deployment
+    spec:
+      containers:
+        - name: app-hpa-deployment-c
+          image: lucasferraz95/kubernetes-hpa:1.0
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 15
+          resources:
+            requests:
+              cpu: 100m
