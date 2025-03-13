@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-efk-deployment
+  labels:
+    app: app-efk-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-efk-deployment
+  template:
+    metadata:
+      labels:
+        app: app-efk-deployment
+    spec:
+      containers:
+        - name: app-efk-deployment-c
+          image: lucasferraz95/kubernetes-efk:1.0
+          ports:
+            - containerPort: 8080
